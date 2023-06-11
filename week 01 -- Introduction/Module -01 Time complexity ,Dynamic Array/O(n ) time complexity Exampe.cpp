@@ -9,11 +9,8 @@ int main ()
     {
     cin >> ar[i];
     }
-  int sum =0;
     for ( int i=0;i<n;i++)
     {
-       // cout << ar[i];
-       sum+=ar[i];
+        cout << ar[i]<<" ";
     }
-    cout <<sum;
 }
