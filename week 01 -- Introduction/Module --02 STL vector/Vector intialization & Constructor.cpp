@@ -9,7 +9,7 @@ int main()
 // vector <int >v(v2);   *Type 04*
 //int ar[5]={9,8,7,7,5}; * Type 05, Normal aktah arraty vanilam & initialize krlm*
 //vector <int > v(ar,ar+5); *Type 05, trpr arktah vector crate koreh tateh array er 1st & last index dialm ,Taile copy hoie geloh*
-vector<int > v={7,87,8,9};
+//vector<int > v={7,87,8,9}; *vector keh sorasori oh initialize korah jai, vector intialize korthe vector er size dithe hoi nah ,vector nijei size nie nei *
     for (int i=0; i<v.size(); i++ )
     {
         cout<< v[i]<<"  ";
