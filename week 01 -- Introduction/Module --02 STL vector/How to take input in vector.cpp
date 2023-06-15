@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    vector <int > v;
+   /* vector <int > v;
     int n;
     cin >> n;
     for (int i=0;i<n;i++)
@@ -13,6 +13,18 @@ int main()
     }
     for (int value :v)
     {
-        cout << value<<" ";
+        cout << value4
+        <<" ";
+    } */
+    int n;
+    cin>> n;
+    vector <int > v(n);
+    for (int i=0;i<v.size();i++)
+    {
+        cin>> v[i];
+    }
+    for (int value:v )
+    {
+        cout << value <<" ";
     }
 }
