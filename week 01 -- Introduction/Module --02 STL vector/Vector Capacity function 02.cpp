@@ -23,7 +23,7 @@ cout << v.capacity()<<endl;
 v.push_back (909);
 cout << v.capacity()<<endl;  */
 
-
+//Built function 04 (v.rsize function a jodhi present array tekhe kom index er khota likhi jmn v.resize(2) likhle 1st  2 index er element gulah dekabhe ,ar jodhi present element tkehe beshi jmn element ache 6 tah ami seta 7 krtre chai & elemetn dithe chai tahole hobhe v.resize (7,89)  )
 vector <int > v;
 v.push_back(78);
 v.push_back(98);
