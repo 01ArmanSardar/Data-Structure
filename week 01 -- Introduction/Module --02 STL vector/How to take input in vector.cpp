@@ -16,7 +16,10 @@ int main()
         cout << value4
         <<" ";
     } */
-    int n;
+
+    // Second Type
+
+    /*int n;
     cin>> n;
     vector <int > v(n);
     for (int i=0;i<v.size();i++)
@@ -26,5 +29,5 @@ int main()
     for (int value:v )
     {
         cout << value <<" ";
-    }
+    } */
 }
