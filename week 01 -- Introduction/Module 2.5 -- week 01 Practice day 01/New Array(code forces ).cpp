@@ -15,10 +15,10 @@ int main()
         cin >>v2[i];
     }
     vector <int> ans(2*n);
-ans=v2;
+    ans=v2;
     ans.insert(ans.begin()+n,v1.begin(),v1.end());
     for (int value :ans)
     {
-        cout << value;
+        cout << value<< " ";
     }
 }
