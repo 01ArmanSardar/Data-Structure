@@ -22,16 +22,5 @@ int main()
         }
 
     }
-    /*if (ar[i]>0)
-    {
-        cout << "1"<<" ";
-    }
-    else if (ar[i]<0)
-    {
-        cout <<"2"<<" ";
-    }
-    else
-    {
-        cout <<"0"<<" ";
-    }*/
+
 }
