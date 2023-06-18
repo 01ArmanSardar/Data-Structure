@@ -9,18 +9,16 @@ int main()
     {
         cin>> ar[i];
     }
-    for ( i=0;i<n;i++)
+    i=0;
+    j=n-1;
+    while (i<j)
     {
-        for ( j=n-1;j<=1;j--)
-        {
-            int temp =ar[i];
-            ar[i]=ar[j];
-           ar[j]=temp;
-        }
+        int tmp =ar[i];
+        ar[i]=ar[j];
+        ar[j]=tmp;
         i++;
         j--;
-    }     //   i++;
-       // j--;
+    }
 
     for (int i=0;i<n;i++)
     {
