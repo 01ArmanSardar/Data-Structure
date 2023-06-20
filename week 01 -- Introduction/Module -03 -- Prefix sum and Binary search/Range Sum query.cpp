@@ -12,6 +12,7 @@ int main()
    while (q--)
    {
       int l,r;
+      cin >>l>>r;
       l--;
       r--;
       int sum=0;
@@ -19,7 +20,8 @@ int main()
       {
           sum+=ar[i];
       }
-      cout << sum;
+   cout <<  sum<< endl;
    }
+//   cout << sum<< endl;
 }
 
