@@ -15,8 +15,8 @@ int main()
         int x;
         cin >>x;
 
-        bool flag =false ;
         int    l=0,r=n;
+         bool flag =false ;
         while (l<=r)
         {
 int            mid=(l+r)/2;
