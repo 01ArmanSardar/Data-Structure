@@ -9,7 +9,7 @@ int main()
     {
         cin >> ar[i];
     }
-    int pre[n];
+   long long int pre[n];
     pre[0]=ar[0];
     for (int i=1; i<n; i++)
     {
@@ -21,9 +21,8 @@ int main()
         cin >>l>>r;
         l--;
         r--;
-        int sum;
+      long long  int sum;
         if (l==0) sum =pre[r];
-
         else sum =pre[r]-pre[l-1];
         cout << sum << endl;
     }
