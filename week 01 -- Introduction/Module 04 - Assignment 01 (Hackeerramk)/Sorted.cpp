@@ -5,25 +5,31 @@ int main()
     int q,n,i;
     cin >>q>>n;
     int ar[n];
-     for ( i=0;i<n;i++)
-     {
-         cin >> ar [i];
-     }
-    while (q--)
+    for ( i=0; i<n; i++)
     {
-      /*  int ar[n];
-        for ( i=0; i<n; i++)
-        {
-            cin >> ar [i];
-        }*/
+        cin >> ar [i];
+    }
+         int flag=true;
+    while (q--)
+    //    int flag=true;
+    {
+        /*  int ar[n];
+          for ( i=0; i<n; i++)
+          {
+              cin >> ar [i];
+          }*/
 
-        if (ar[i]<ar[i+1])
+        if (ar[i]>ar[i+1])
         {
-            cout <<"YES";
+            flag=false;
         }
-        else
-        {
-            cout << "NO";
-        }
+
+    }
+    for (int i=0;i<q;i++)
+    {
+    if (flag=true )
+        cout <<"Yes";
+    else
+        cout <<"No";
     }
 }
