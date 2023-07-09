@@ -15,11 +15,11 @@ int main()
     {
         pre[i]=ar[i]+pre[i-1];
       //  cout <<pre[i]<<" ";
-    reverse(pre.begin(),pre.end());
-    cout <<pre[i]<<" ";
+ //   reverse(pre.begin(),pre.end());
+   // cout <<pre[i]<<" ";
 
 
     }
-   // reverse(pre.begin(),pre.end());
-   // cout <<pre[i]<<" ";
+    reverse(pre.begin(),pre.end());
+    cout <<pre[i]<<" ";
 }
