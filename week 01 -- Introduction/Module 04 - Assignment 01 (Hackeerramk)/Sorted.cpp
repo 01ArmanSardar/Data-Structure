@@ -9,9 +9,9 @@ int main()
     {
         cin >> ar [i];
     }
-         int flag=true;
+    int flag=true;
     while (q--)
-    //    int flag=true;
+        //    int flag=true;
     {
         /*  int ar[n];
           for ( i=0; i<n; i++)
@@ -19,17 +19,17 @@ int main()
               cin >> ar [i];
           }*/
 
-        if (ar[i]>ar[i+1])
+        if (ar[i]<ar[i+1])
         {
             flag=false;
         }
 
     }
-    for (int i=0;i<q;i++)
+    for (int i=q; i<0; i++)
     {
-    if (flag=true )
-        cout <<"Yes";
-    else
-        cout <<"No";
+        if (flag=true )
+            cout <<"Yes";
+        else
+            cout <<"No";
     }
 }
