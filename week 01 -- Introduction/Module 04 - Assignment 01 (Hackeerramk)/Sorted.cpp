@@ -19,7 +19,7 @@ int main()
               cin >> ar [i];
           }*/
 
-        if (ar[i]<ar[i+1])
+        if (ar[i+1])
         {
             flag=false;
         }
