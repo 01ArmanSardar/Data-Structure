@@ -5,28 +5,29 @@ int main()
     int n;
     cin >>n;
     int ar[n];
-//sort (ar,ar+n);
+
     for (int i=0; i<n; i++)
     {
         cin>> ar[i];
-        //sort (ar,ar+n)
+
     }
     sort (ar,ar+n);
-int     flag =false  ;
+    int     flag =1  ;
     for (int i=0; i<n; i++)
     {
         if (ar[i]==ar[i+1])
         {
-            flag=true;
+            flag=0;
         }
     }
-    if (flag =true )
+    if (flag ==0 )
     {
-        cout <<"YES";
+        cout <<"YES"<< endl;
+
     }
     else
     {
-        cout << "NO";
+        cout << "NO"<<endl;
     }
 }
 /*
