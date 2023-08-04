@@ -16,9 +16,13 @@ int main()
         cin >> v2[i];
     }
     cin >> k;
-   replace (v.begin ()+k,v.end(),v2.begin (),v2.end());
+ //  replace (v.begin ()+k,v.end(),v2.begin (),v2.end());
+ for (int i=0;i<b;i++)
+ {
+     replace (v.begin ()+k,v.end(),v[i+k],v2[i]);
+ }
     for (int i=0; i<a; i++)
     {
-        cout  << v[i];
+        cout  << v[i]<<endl;
     }
 }
