@@ -16,14 +16,7 @@ int main()
         cin >> v2[i];
     }
     cin >> k;
- //  replace (v.begin ()+k,v.end(),v2.begin (),v2.end());
-// int a+b;
- //vector int v3
-
-
-     v.insert (v.begin ()+k,v2.begin(),v2.end());
-
-
+    v.insert (v.begin ()+k,v2.begin(),v2.end());
     for (auto x:v)
     {
         cout  << x<<" ";
