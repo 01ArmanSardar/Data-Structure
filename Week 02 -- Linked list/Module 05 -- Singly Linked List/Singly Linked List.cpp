@@ -13,9 +13,10 @@ class Node
 };
 int main()
 {
-    Node head (10);
-    Node sec (20);
+    Node * head= new Node  (10);
+    Node *sec =new Node  (20);
 
-    cout << head.val<<endl;
-    cout <<sec.val<<endl;
+    cout << head->val<<endl;
+    cout <<sec->val<<endl;
+    cout << head->next->val<<endl;
 }
