@@ -10,12 +10,12 @@ int main()
         for (int j=1; j<=n; j++)
         {
             if (i==j && i==m)
-                cout<< "l";
+                cout<< "X";
 else if (i==j)
-    cout <<"x";
+    cout <<"\";
         else  if (j==(n+1-i))
 
-                cout <<"y";
+                cout <<"/";
        //   else if   (i==j & i==m)
             //    cout <<"l";
 
