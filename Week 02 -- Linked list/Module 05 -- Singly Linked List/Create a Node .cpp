@@ -2,7 +2,7 @@
 using namespace std;
 class Node
 {
-public:
+    public:
     int val;
     Node* next;
     Node (int val)
@@ -13,7 +13,7 @@ public:
 };
 int main()
 {
-    Node * head= new Node  (10); //ata holo dynamic Node
+    Node * head= new Node  (10);
     Node *sec =new Node  (20);
 
     cout << head->val<<endl;
