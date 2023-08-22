@@ -2,7 +2,8 @@
 using namespace std;
 fun (int *&p)
 {
-cout <<p<<endl;
+    //p=NULL;
+//cout <<p<<endl;
 }
 int main()
 {
