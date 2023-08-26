@@ -101,7 +101,7 @@ int main()
         cout << "option 03 ;insert at any positoion" << endl;//Errpr handel done 
         cout << "option 04 ;insert at head" << endl; //NO erroe in this iteam
         cout << "Option 05 ; delet a position" << endl;//Error handel done 
-        cout << "Option 06 ; delet a head" << endl;
+        cout << "Option 06 ; delet a head" << endl;//Error handel done 
         cout << "Option 07 ; terminate" << endl;
         int op;
         cin >> op;
