@@ -65,6 +65,12 @@ void delet_a_position(Node *head,int pos)
     tmp->next=tmp->next->next;
  delete assume;
 }
+void Delet_head(Node *&head)
+{
+Node *tmp=head;
+head=head->next;
+delete tmp;
+}
 int main()
 {
     Node *head = NULL;
@@ -75,7 +81,8 @@ int main()
         cout << "option 03 ;insert at any positoion" << endl;
         cout << "option 04 ;insert at head" << endl;
         cout << "Option 05 ; delet a position" << endl;
-        cout << "Option 06 ; terminate" << endl;
+        cout << "Option 06 ; delet a head" << endl;
+        cout << "Option 07 ; terminate" << endl;
         int op;
         cin >> op;
         if (op == 1)
@@ -119,7 +126,12 @@ int main()
             cin>>pos;
             delet_a_position(head,pos);
         }
-        else if (op == 6)
+        else if (op==6)
+        {
+Delet_head(head);
+        }
+
+        else if (op == 7)
         {
             break;
         }
