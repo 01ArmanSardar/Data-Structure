@@ -11,6 +11,17 @@ public:
         this->next = NULL;
     }
 };
+void Insert(Node *head,int pos,int v)
+{
+    Node * newnode =new Node(v);
+    Node *tmp=head;
+    for (int i=1;i<=pos-1;i++)
+    {
+        tmp=tmp->next;
+    }
+    newnode->next=tmp->next;
+    tmp->next=newnode;
+}
 void Print_linked_list(Node *head)
 {
     Node *tmp = head;
@@ -31,6 +42,9 @@ int main()
     a->next = b;
     b->next = c;
     c->next = d;
+    Print_linked_list(head);
+    cout <<endl;
+Insert(head,2,100);
     Print_linked_list(head);
     return 0;
 }
