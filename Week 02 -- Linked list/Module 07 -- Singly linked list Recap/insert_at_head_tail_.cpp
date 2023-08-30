@@ -11,7 +11,7 @@ public:
         this->next = NULL;
     }
 };
-void Insert(Node *head, int pos, int v) // tine complexity O(n);
+void Insert(Node *head, int pos, int v) // time complexity O(n);
 {
     Node *newnode = new Node(v);
     Node *tmp = head;
@@ -42,7 +42,24 @@ void Print_linked_list(Node *head) // time complexity O(n)
         tmp = tmp->next;
     }
 }
-
+void insert_head(Node *&head, int v)
+{
+    Node *newnode = new Node(v);
+    newnode->next = head;
+    head = newnode;
+}
+void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
+{
+    Node *newnode = new Node(v);
+    if (head == NULL)
+    {
+        head = newnode;
+        tail = newnode;
+        return;
+    }
+    tail->next = newnode;
+    tail = newnode;
+}
 int main()
 {
     Node *head = new Node(10);
@@ -54,25 +71,29 @@ int main()
     a->next = b;
     b->next = c;
     c->next = d;
-    while (true)
-    {
-        int pos, v;
-        cin >> pos;
-        if (pos == -1)
-        {
-            break;
-        }
-        cin >> v;
+    Node *tail = d;
 
-        if (pos > size(head))
-        {
-            cout << "invalid Index" << endl;
-        }
-        else
-        {
-            Insert(head, pos, v);
-        }
-        Print_linked_list(head);
+    int pos, v;
+    cin >> pos;
+    cin >> v;
+
+    if (pos > size(head))
+    {
+        cout << "invalid Index" << endl;
     }
+    else if (pos == 0)
+    {
+        insert_head(head,v);
+    }
+    else if (pos == size(head))
+    {
+        insert_tail(head,tail,v);
+    }
+    else
+    {
+        Insert(head,pos,v);
+    }
+    Print_linked_list(head);
+
     return 0;
 }
