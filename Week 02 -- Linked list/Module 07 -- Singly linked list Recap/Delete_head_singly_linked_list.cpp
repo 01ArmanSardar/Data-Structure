@@ -31,7 +31,7 @@ int size(Node *head) // time complexity O(n)
     }
     return count;
 }
-void delete_head(Node *& head)
+void delete_head(Node *& head) //time complexity O(1)
 {
     
     Node *deletenode = head;

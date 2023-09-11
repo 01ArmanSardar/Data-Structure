@@ -11,7 +11,7 @@ public:
         this->next = NULL;
     }
 };
-void Insert(Node *head, int pos, int v) // time complexity O(n);
+void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
 {
     Node *newnode = new Node(v);
     Node *tmp = head;
@@ -91,7 +91,7 @@ int main()
     }
     else
     {
-        Insert(head,pos,v);
+    Insert_at_positon(head,pos,v);
     }
     Print_linked_list(head);
 
