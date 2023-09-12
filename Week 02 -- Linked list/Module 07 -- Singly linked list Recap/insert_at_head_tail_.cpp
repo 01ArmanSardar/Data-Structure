@@ -9,9 +9,7 @@ public:
     {
         this->val = val;
         this->next = NULL;
-    }
-};
-void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
+    }void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
 {
     Node *newnode = new Node(v);
     Node *tmp = head;
@@ -22,6 +20,8 @@ void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
     newnode->next = tmp->next;
     tmp->next = newnode;
 }
+};
+
 int size(Node *head) // time complexity O(n)
 {
     Node *tmp = head;

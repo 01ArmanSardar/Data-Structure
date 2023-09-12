@@ -17,24 +17,6 @@ void insert_head(Node *&head, int v)
     newnode->next = head;
     head = newnode;
 }
-/*void Insert_at_any_position(Node *head, int pos, int v)
-{
-    Node *newnode = new Node(v);
-    Node *tmp = head;
-    for (int i = 1; i <= pos - 1; i++)
-    {
-        tmp = tmp->next;
-        if (tmp == NULL)
-        {
-            cout << endl
-                 << "invalid index" << endl
-                 << endl;
-            return;
-        }
-    }
-    newnode->next = tmp->next;
-    tmp->next = newnode;
-}*/
 void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
 {
     Node *newnode = new Node(v);

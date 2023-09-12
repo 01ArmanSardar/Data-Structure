@@ -72,10 +72,10 @@ void delet_a_position(Node *head, int pos)
         }
     }
     if (tmp->next==NULL)
-        {
-            cout <<endl<< "invalid index"<<endl;
-            return;
-        }
+    {
+        cout <<endl<< "invalid index"<<endl;
+        return;
+    }
     Node *assume = tmp->next;
     tmp->next = tmp->next->next;
     delete assume;
@@ -83,10 +83,10 @@ void delet_a_position(Node *head, int pos)
 void Delet_head(Node *&head)
 {
     if (head==NULL)
-        {
-            cout <<endl<< "Head is not avilaavle at the moment"<<endl;
-            return;
-        }
+    {
+        cout <<endl<< "Head is not avilaavle at the moment"<<endl;
+        return;
+    }
     Node *tmp = head;
     head = head->next;
     delete tmp;
@@ -97,11 +97,11 @@ int main()
     while (true)
     {
         cout << "Option 01 ;insert at tail" << endl; //Error handle Done
-        cout << "Option 02 ;print the linkedlist" << endl;//No error in this iteam 
-        cout << "option 03 ;insert at any positoion" << endl;//Errpr handel done 
+        cout << "Option 02 ;print the linkedlist" << endl;//No error in this iteam
+        cout << "option 03 ;insert at any positoion" << endl;//Errpr handel done
         cout << "option 04 ;insert at head" << endl; //NO erroe in this iteam
-        cout << "Option 05 ; delet a position" << endl;//Error handel done 
-        cout << "Option 06 ; delet a head" << endl;//Error handel done 
+        cout << "Option 05 ; delet a position" << endl;//Error handel done
+        cout << "Option 06 ; delet a head" << endl;//Error handel done
         cout << "Option 07 ; terminate" << endl;
         int op;
         cin >> op;
