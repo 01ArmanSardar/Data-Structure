@@ -56,33 +56,7 @@ void midell_element_found(Node *head)
     }
     
 }
-//
 
-// /
-/*void midell_element_found_two(Node *head)
-{
-    Node *tmp = head;
-    int pos;
-    if (pos = size(head) / 2)
-    {
-        for (int i = 1; i <= pos; i++)
-        {
-            tmp = tmp->next;
-        }
-    }
-    cout << tmp->val;
-
-    else if (pos = size(head) / 2 - 1)
-    {
-        for (int i = 1; i <= pos; i++)
-        {
-            tmp = tmp->next;
-        }
-    }
-    cout << tmp->val;
-}*/
-
-// /
 int main()
 {
     Node *head = NULL;
