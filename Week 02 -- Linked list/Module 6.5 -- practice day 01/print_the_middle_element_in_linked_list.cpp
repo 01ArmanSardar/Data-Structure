@@ -11,7 +11,6 @@ public:
         this->next = NULL;
     }
 };
-
 void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
 {
     Node *newnode = new Node(v);
@@ -36,6 +35,54 @@ int size(Node *head)
     }
     return count;
 }
+//
+void midell_element_found(Node *head)
+{
+    Node *tmp = head;
+    int pos = size(head) / 2;
+    if (size (head) % 2== 0)
+    {
+        pos --;
+    }
+    for (int i = 1; i <= pos; i++)
+    {
+        tmp = tmp->next;
+    }
+    cout << tmp->val;
+    if (size(head) % 2==0)
+    {
+        tmp=tmp->next;
+        cout << " "<< tmp->val;
+    }
+    
+}
+//
+
+// /
+/*void midell_element_found_two(Node *head)
+{
+    Node *tmp = head;
+    int pos;
+    if (pos = size(head) / 2)
+    {
+        for (int i = 1; i <= pos; i++)
+        {
+            tmp = tmp->next;
+        }
+    }
+    cout << tmp->val;
+
+    else if (pos = size(head) / 2 - 1)
+    {
+        for (int i = 1; i <= pos; i++)
+        {
+            tmp = tmp->next;
+        }
+    }
+    cout << tmp->val;
+}*/
+
+// /
 int main()
 {
     Node *head = NULL;
@@ -48,7 +95,5 @@ int main()
             break;
         insert_tail(head, tail, val); // time complexity O(1)
     }
-cout <<"Size of your linked list"<<endl;
-   cout << size (head);
-
+    midell_element_found(head);
 }

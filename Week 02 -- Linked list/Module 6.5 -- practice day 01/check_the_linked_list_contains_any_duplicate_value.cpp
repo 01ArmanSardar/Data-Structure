@@ -11,7 +11,6 @@ public:
         this->next = NULL;
     }
 };
-
 void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
 {
     Node *newnode = new Node(v);
@@ -23,18 +22,6 @@ void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
     }
     tail->next = newnode;
     tail = newnode;
-}
-int size(Node *head)
-{
-    Node *tmp = head;
-    int count = 0;
-    while (tmp != NULL)
-    {
-
-        tmp = tmp->next;
-        count++;
-    }
-    return count;
 }
 int main()
 {
@@ -48,7 +35,18 @@ int main()
             break;
         insert_tail(head, tail, val); // time complexity O(1)
     }
-cout <<"Size of your linked list"<<endl;
-   cout << size (head);
+    int flag = 1;
+for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if (i->val == j->val)
+            {
+           flag =0;
+            }
+        }
+    }
+    if (flag ==1) cout << "NO";
+    else if (flag == 0 ) cout <<"yes";
 
 }

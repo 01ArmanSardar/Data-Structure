@@ -24,29 +24,28 @@ void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
     tail = newnode;
 }
 
-void print_reversly(Node * n)
+void print_reversly(Node *n)
 {
-    //basecase
-    if (n==NULL)
-    return;
-print_reversly(n->next);
-cout <<n->val<<" ";
+    // basecase
+    if (n == NULL)
+        return;
+    print_reversly(n->next);
+    cout << n->val << " ";
 }
-//Node gulah input nie trpr  insert_tail function die connection koreh reverse function keh call dei
+// Node gulah input nie trpr  insert_tail function die connection koreh reverse function keh call dei
 int main()
 {
     Node *head = NULL;
     Node *tail = NULL;
     int val;
-    while(true)//time complexity O(n)
+    while (true) // time complexity O(n)
     {
         cin >> val;
         if (val == -1)
             break;
-        insert_tail(head, tail,val);//time complexity O(1)
+        insert_tail(head, tail, val); // time complexity O(1)
     }
     print_reversly(head);
-    
 }
 // Node gulah abong er connectiion gulah deoa takhe
 /*int main()
