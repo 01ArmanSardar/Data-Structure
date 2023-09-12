@@ -32,7 +32,7 @@ void print_reversly(Node * n)
 print_reversly(n->next);
 cout <<n->val<<" ";
 }
-
+//Node gulah input nie trpr  insert_tail function die connection koreh reverse function keh call dei
 int main()
 {
     Node *head = NULL;
@@ -48,6 +48,7 @@ int main()
     print_reversly(head);
     
 }
+// Node gulah abong er connectiion gulah deoa takhe
 /*int main()
 {
     Node *head = new Node(10);
