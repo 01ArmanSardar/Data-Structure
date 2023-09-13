@@ -21,6 +21,17 @@ void Print_linked_list(Node *head) // time complexity O(n)
     }
    
 }
+int size(Node *head) // time complexity O(n)
+{
+    Node *tmp = head;
+    int count = 0;
+    while (tmp != NULL)
+    {
+        count++;
+        tmp = tmp->next;
+    }
+    return count;
+}
 void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
 {
     Node *newnode = new Node(v);
@@ -46,6 +57,22 @@ int main()
         if (val == -1)
             break;
         insert_tail(head,tail,val);//time complexity O(1)
-        insert_tail(head2,tail2,val);
+       
     }
+     while(true)//time complexity O(n)
+    {
+        cin >> val;
+        if (val == -1)
+            break;
+        insert_tail(head2,tail2,val);//time complexity O(1)
+       
+    }
+    int size1 =size(head);
+    int size2=size(head2);
+    if (size1==size2)
+    {
+        cout <<"yes";
+
+    }
+    else cout <<"no";
 }
