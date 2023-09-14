@@ -32,6 +32,7 @@ int size(Node *head) // time complexity O(n)
     }
     return count;
 }
+
 void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
 {
     Node *newnode = new Node(v);
@@ -43,6 +44,17 @@ void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
     }
     tail->next = newnode;
     tail = newnode;
+}
+bool check_samevalue_or_not(Node *head ,Node *head2)
+{
+    while (head !=NULL && head!=NULL)
+    {
+        if (head->val != head2->val)
+        return false ;
+ head=head->next;
+    head2=head2->next;
+    }
+    return (head==NULL && head2== NULL);
 }
 int main()
 {
@@ -69,10 +81,14 @@ int main()
     }
     int size1 =size(head);
     int size2=size(head2);
+   
     if (size1==size2)
     {
-        cout <<"YES";
-
+    if ( check_samevalue_or_not(head,head2))
+    cout <<"YES";
+    else 
+    cout <<"NO";
     }
     else cout <<"NO";
+   
 }
