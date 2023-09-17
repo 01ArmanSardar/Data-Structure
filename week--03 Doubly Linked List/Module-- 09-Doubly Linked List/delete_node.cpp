@@ -43,19 +43,32 @@ int size(Node *head)
     }
     return cnt;
 }
-void delete_node(Node *head, int pos)
+void delete_at_any_node(Node *head, int pos)
 {
-    Node *tmp =head;
+    Node *tmp = head;
     for (int i = 1; i <= pos - 1; i++)
     {
         tmp = tmp->next;
     }
-   Node * deltenode =tmp->next;
-   tmp->next=tmp->next->next;
-   tmp->next->prev=tmp;
-   delete deltenode;
+    Node *deltenode = tmp->next;
+    tmp->next = tmp->next->next;
+    tmp->next->prev = tmp;
+    delete deltenode;
 }
-
+void delete_tail(Node *&tail)
+{
+    Node *deltenode = tail;
+    tail = tail->prev;
+    delete deltenode;
+    tail->next = NULL;
+}
+void delete_head(Node *&head)
+{
+    Node *deletehead=head;
+    head =head->next;
+    delete deletehead;
+    head->prev=NULL;
+}
 int main()
 {
 
@@ -72,9 +85,10 @@ int main()
     c->prev = b;
     int pos;
     cin >> pos;
-     
-   
-    delete_node(head,pos);
+    delete_head(head);
+    
+//delete_tail(tail);
+   // delete_at_any_node(head, pos);
     print_normal(head);
     print_reversly(tail);
 }
