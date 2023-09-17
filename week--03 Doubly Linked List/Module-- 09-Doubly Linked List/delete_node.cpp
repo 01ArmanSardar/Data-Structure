@@ -64,10 +64,10 @@ void delete_tail(Node *&tail)
 }
 void delete_head(Node *&head)
 {
-    Node *deletehead=head;
-    head =head->next;
+    Node *deletehead = head;
+    head = head->next;
     delete deletehead;
-    head->prev=NULL;
+    head->prev = NULL;
 }
 int main()
 {
@@ -85,10 +85,23 @@ int main()
     c->prev = b;
     int pos;
     cin >> pos;
-    delete_head(head);
-    
-//delete_tail(tail);
-   // delete_at_any_node(head, pos);
+    if (pos >= size(head))
+    {
+        cout << "invalid index" << endl;
+    }
+    else if (pos == 0)
+    {
+        delete_head(head);
+    }
+    else if (pos == size(head) - 1)
+    {
+        delete_tail(tail);
+    }
+
+    else
+    {
+        delete_at_any_node(head, pos);
+    }
     print_normal(head);
     print_reversly(tail);
 }
