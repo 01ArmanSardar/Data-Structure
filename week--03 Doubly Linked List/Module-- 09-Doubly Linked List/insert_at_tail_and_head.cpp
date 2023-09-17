@@ -56,24 +56,36 @@ void insert_at_positon(Node *head, int pos, int val)
     newnode->next->prev = newnode;
     newnode->prev = tmp;
 }
-void insert_at_head(Node *&head,Node *&tail, int val)
+void insert_at_head(Node *&head, Node *&tail, int val)
 {
     Node *newnode = new Node(val);
-    if (head ==NULL)
+    if (head == NULL)
     {
-        head=newnode;
-        tail=newnode;
+        head = newnode;
+        tail = newnode;
         return;
     }
     newnode->next = head;
     head->prev = newnode;
     head = newnode;
 }
+void insert_at_tail(Node*& head, Node *&tail, int val)
+{
+    Node *newnode = new Node(val);
+    if (head == NULL)
+    {
+        head = newnode;
+        tail = newnode;
+        return;
+    }  
+   tail->next = newnode;
+    newnode->prev = tail;
+   tail = newnode;
+}
 int main()
 {
-    Node * head=NULL;
-    Node *tail=NULL;
-   /*  Node *head = new Node(10);
+
+    Node *head = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
     Node *c = new Node(50);
@@ -83,25 +95,30 @@ int main()
     a->next = b;
     b->prev = a;
     b->next = c;
-    c->prev = b;  */
+    c->prev = b; 
     int pos, val;
-    cin >> pos >> val;
-     if (pos == 0)
+    cin >>pos>> val;
+
+    if (pos == 0)
     {
-        insert_at_head(head,tail,val);
+        insert_at_head(head, tail, val);
     }
-   else if (pos >= size(head))
+    else if (pos==size(head))
+    {
+        insert_at_tail(head,tail,val);
+    }
+    else if (pos >= size(head))
     {
         cout << "invalid index" << endl;
     }
-   /*  else if (pos == 0)
-    {
-        insert_at_head(head,tail,val);
-    } */
+      else if (pos == 0)
+     {
+         insert_at_head(head,tail,val);
+     } 
     else
     {
         insert_at_positon(head, pos, val);
-    }
+    } 
     print_normal(head);
     print_reversly(tail);
 }

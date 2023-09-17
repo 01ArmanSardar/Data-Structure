@@ -9,18 +9,19 @@ public:
     {
         this->val = val;
         this->next = NULL;
-    }void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
-{
-    Node *newnode = new Node(v);
-    Node *tmp = head;
-    for (int i = 1; i <= pos - 1; i++)
-    {
-        tmp = tmp->next;
     }
-    newnode->next = tmp->next;
-    tmp->next = newnode;
-}
 };
+ void Insert_at_positon(Node *head, int pos, int v) // time complexity O(n);
+    {
+        Node *newnode = new Node(v);
+        Node *tmp = head;
+        for (int i = 1; i <= pos - 1; i++)
+        {
+            tmp = tmp->next;
+        }
+        newnode->next = tmp->next;
+        tmp->next = newnode;
+    }
 
 int size(Node *head) // time complexity O(n)
 {
@@ -83,15 +84,15 @@ int main()
     }
     else if (pos == 0)
     {
-        insert_head(head,v);
+        insert_head(head, v);
     }
     else if (pos == size(head))
     {
-        insert_tail(head,tail,v);
+        insert_tail(head, tail, v);
     }
     else
     {
-    Insert_at_positon(head,pos,v);
+        Insert_at_positon(head, pos, v);
     }
     Print_linked_list(head);
 
