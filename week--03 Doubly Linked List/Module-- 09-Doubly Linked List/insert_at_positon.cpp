@@ -32,11 +32,22 @@ void print_reversly(Node *tail)
         tmp = tmp->prev;
     }
 }
+int size(Node *head)
+{
+    Node *tmp = head;
+    int cnt = 0;
+    while (tmp != NULL)
+    {
+        cnt++;
+        tmp = tmp->next;
+    }
+    return cnt;
+}
 void insert_at_positon(Node *head, int pos, int val)
 {
     Node *newnode = new Node(val);
     Node *tmp = head;
-    for (int i = 1; i < -pos; i++)
+    for (int i = 1; i <= pos-1; i++)
     {
         tmp = tmp->next;
     }
@@ -50,7 +61,7 @@ int main()
     Node *head = new Node(10);
     Node *a = new Node(20);
     Node *b = new Node(30);
-    Node *c = new Node(40);
+    Node *c = new Node(50);
     Node *tail = c;
     head->next = a;
     a->prev = head;
@@ -58,7 +69,16 @@ int main()
     b->prev = a;
     b->next = c;
     c->prev = b;
-    insert_at_positon(head,2,1000);
+    int pos, val;
+    cin >> pos >> val;
+    if (pos >= size(head))
+    {
+        cout << "invalid index" << endl;
+    }
+    else
+    {
+        insert_at_positon(head, pos, val);
+    }
     print_normal(head);
     print_reversly(tail);
 }
