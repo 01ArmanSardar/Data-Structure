@@ -5,10 +5,12 @@ class Node
 public:
     int val;
     Node *next;
+   
     Node(int val)
     {
         this->val = val;
         this->next = NULL;
+        
     }
 };
 void reverse (Node *& head,Node *cur)
