@@ -46,7 +46,7 @@ void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
 }
 bool check_samevalue_or_not(Node *head, Node *head2)
 {
-    while (head != NULL && head != NULL)
+    while (head != NULL && head2 != NULL)
     {
         if (head->val != head2->val)
             return false;
@@ -54,6 +54,7 @@ bool check_samevalue_or_not(Node *head, Node *head2)
         head2 = head2->next;
     }
     return (head == NULL && head2 == NULL);
+   
 }
 int main()
 {

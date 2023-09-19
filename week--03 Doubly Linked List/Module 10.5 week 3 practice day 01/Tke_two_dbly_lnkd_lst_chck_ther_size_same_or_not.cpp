@@ -26,7 +26,7 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
     newnode->prev = tail;
     tail = newnode;
 }
-   void print_normal(Node *head)
+void print_normal(Node *head)
 {
     Node *tmp = head;
     while (tmp != NULL)
@@ -34,7 +34,37 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
         cout << tmp->val << " ";
         tmp = tmp->next;
     }
-   cout << endl;
+    cout << endl;
+}
+int size(Node *head) // time complexity O(n)
+{
+    Node *tmp = head;
+    int count = 0;
+    while (tmp != NULL)
+    {
+        count++;
+        tmp = tmp->next;
+    }
+    return count;
+}
+bool checked_value_same_or_not(Node *head, Node *head2)
+{
+    Node *tmp = head;
+    Node *tmp2 = head2;
+    
+    while (tmp != NULL)
+    {
+        if (tmp->val==tmp2->val)
+        {
+            tmp=tmp->next;
+            tmp2=tmp2->next;
+        }
+        else  
+
+           return false;
+    }
+    return true;
+    
 }
 int main()
 {
@@ -50,7 +80,7 @@ int main()
             break;
         insert_at_tail(head, tail, val);
     }
-   
+
     while (true)
     {
         cin >> val;
@@ -58,6 +88,18 @@ int main()
             break;
         insert_at_tail(head2, tail2, val);
     }
- print_normal(head);
- print_normal(head2);
+     int size1 = size(head);
+    int size2 = size(head2);
+
+    if (size1 == size2)
+    {
+        if (checked_value_same_or_not(head,head2))
+            cout << "YES";
+        else
+            cout << "no";
+    }
+    else
+        cout << "NO";
+ //   print_normal(head);
+ //   print_normal(head2);
 }
