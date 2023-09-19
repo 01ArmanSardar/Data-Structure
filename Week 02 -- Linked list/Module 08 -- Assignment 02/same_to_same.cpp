@@ -19,7 +19,6 @@ void Print_linked_list(Node *head) // time complexity O(n)
         cout << tmp->val << " ";
         tmp = tmp->next;
     }
-   
 }
 int size(Node *head) // time complexity O(n)
 {
@@ -45,50 +44,48 @@ void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
     tail->next = newnode;
     tail = newnode;
 }
-bool check_samevalue_or_not(Node *head ,Node *head2)
+bool check_samevalue_or_not(Node *head, Node *head2)
 {
-    while (head !=NULL && head!=NULL)
+    while (head != NULL && head != NULL)
     {
         if (head->val != head2->val)
-        return false ;
- head=head->next;
-    head2=head2->next;
+            return false;
+        head = head->next;
+        head2 = head2->next;
     }
-    return (head==NULL && head2== NULL);
+    return (head == NULL && head2 == NULL);
 }
 int main()
 {
     Node *head = NULL;
     Node *tail = NULL;
-    Node *head2=NULL;
-    Node *tail2=NULL;
+    Node *head2 = NULL;
+    Node *tail2 = NULL;
     int val;
-    while(true)//time complexity O(n)
+    while (true) // time complexity O(n)
     {
         cin >> val;
         if (val == -1)
             break;
-        insert_tail(head,tail,val);//time complexity O(1)
-       
+        insert_tail(head, tail, val); // time complexity O(1)
     }
-     while(true)//time complexity O(n)
+    while (true) // time complexity O(n)
     {
         cin >> val;
         if (val == -1)
             break;
-        insert_tail(head2,tail2,val);//time complexity O(1)
-       
+        insert_tail(head2, tail2, val); // time complexity O(1)
     }
-    int size1 =size(head);
-    int size2=size(head2);
-   
-    if (size1==size2)
+    int size1 = size(head);
+    int size2 = size(head2);
+
+    if (size1 == size2)
     {
-    if ( check_samevalue_or_not(head,head2))
-    cout <<"YES";
-    else 
-    cout <<"NO";
+        if (check_samevalue_or_not(head, head2))
+            cout << "YES";
+        else
+            cout << "NO";
     }
-    else cout <<"NO";
-   
+    else
+        cout << "NO";
 }
