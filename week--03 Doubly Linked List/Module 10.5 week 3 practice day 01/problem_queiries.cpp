@@ -59,6 +59,40 @@ void print_reversly(Node *tail)
         tmp = tmp->prev;
     }
 }
+void Reverse_doubly_linked_list(Node *head, Node *tail)
+{
+    Node *i = head;
+    Node *j = tail;
+    while (i != j && i->next != j)
+    {
+        swap(i->val, j->val);
+        i = i->next;
+        j = j->prev;
+    }
+}
+void print_normal(Node *head)
+{
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    cout << endl;
+}
+void insert_at_positon(Node *head, int pos, int val)
+{
+    Node *newnode = new Node(val);
+    Node *tmp = head;
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        tmp = tmp->next;
+    }
+    newnode->next = tmp->next;
+    tmp->next = newnode;
+    newnode->next->prev = newnode;
+    newnode->prev = tmp;
+}
 int main()
 {
     Node *head = NULL;
@@ -74,15 +108,21 @@ int main()
         if (x == 0)
         {
             insert_at_head(head, tail, val);
-            cout << head->val << " " << tail->val << endl;
-             cout << tail->val << " " << head->val << endl;
+            
         }
-        else if (x == 1)
+
+        else if (x == size(head))
         {
             insert_at_tail(head, tail, val);
-            cout << head->val << " " << tail->val << endl;
-             cout << tail->val << " " << head->val << endl;
+             
         }
-        else cout <<"invalid index";
+        else if (x <= size(head))
+            cout << "invalid index" << endl;
+        else{
+            insert_at_positon(head, x, val);
+           
+        }
+         print_normal(head);
+            print_reversly(tail);
     }
 }

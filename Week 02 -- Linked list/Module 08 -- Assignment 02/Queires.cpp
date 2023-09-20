@@ -11,13 +11,13 @@ public:
         this->next = NULL;
     }
 };
-void insert_head(Node *&head,Node *&tail, int v)
+void insert_head(Node *&head, Node *&tail, int v)
 {
-     Node *newnode = new Node(v);
-    if (head==NULL)
+    Node *newnode = new Node(v);
+    if (head == NULL)
     {
-        head =newnode;
-        tail=newnode;
+        head = newnode;
+        tail = newnode;
         return;
     }
     newnode->next = head;
@@ -47,25 +47,24 @@ void Print_linked_list(Node *head) // time complexity O(n)
 
 int main()
 {
-     Node *head = NULL;
-        Node *tail = NULL;
+    Node *head = NULL;
+    Node *tail = NULL;
     int Q;
     cin >> Q;
     while (Q--)
     {
-       
+
         int x, val;
         cin >> x >> val;
-       if (x==0){
-        insert_head(head,tail,val);
-          cout <<head->val<<" "<<tail->val<<endl; 
-       }
-       else if (x==1)
-       {
-           insert_tail(head,tail,val);
-           cout <<head->val<<" "<<tail->val<<endl;
-
-           }
-      
+        if (x == 0)
+        {
+            insert_head(head, tail, val);
+            cout << head->val << " " << tail->val << endl;
+        }
+        else if (x == 1)
+        {
+            insert_tail(head, tail, val);
+            cout << head->val << " " << tail->val << endl;
+        }
     }
 }
