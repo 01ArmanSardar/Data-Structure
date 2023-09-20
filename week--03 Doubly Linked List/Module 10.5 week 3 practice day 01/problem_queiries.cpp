@@ -58,6 +58,7 @@ void print_reversly(Node *tail)
         cout << tmp->val << " ";
         tmp = tmp->prev;
     }
+    cout << endl;
 }
 void Reverse_doubly_linked_list(Node *head, Node *tail)
 {
@@ -108,21 +109,31 @@ int main()
         if (x == 0)
         {
             insert_at_head(head, tail, val);
+            print_normal(head);
+            print_reversly(tail);
+
             
         }
 
         else if (x == size(head))
         {
             insert_at_tail(head, tail, val);
-             
-        }
-        else if (x <= size(head))
-            cout << "invalid index" << endl;
-        else{
-            insert_at_positon(head, x, val);
-           
-        }
-         print_normal(head);
+            print_normal(head);
             print_reversly(tail);
+          
+        }
+        else if (x >size(head))
+        {
+            cout << "invalid index" << endl;
+            
+        }
+        else 
+        {
+            insert_at_positon(head, x, val);
+            print_normal(head);
+            print_reversly(tail);
+        }
+       
+        
     }
 }
