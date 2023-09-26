@@ -11,39 +11,16 @@ public:
         this->next = NULL;
     }
 };
-void Print_linked_list(Node *head) // time complexity O(n)
-{
-    Node *tmp = head;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
-    }
-}
-void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
-{
-    Node *newnode = new Node(v);
-    if (head == NULL)
-    {
-        head = newnode;
-        tail = newnode;
-        return;
-    }
-    tail->next = newnode;
-    tail = newnode;
-}
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
-    int val;
+ int val;
    list<int>MyList;
-    while (true) // time complexity O(n)
+    while (true) 
     {
         cin >> val;
         if (val == -1)
             break;
-           // MyList.push_front(val);
+           
           MyList.push_back(val);
        
     }
@@ -51,8 +28,6 @@ int main()
     MyList.unique();
     for (int val :MyList)
     {
-        cout << val<<" ";
+        cout << val<< " ";
     }
-   // list<int>MyList();
-    //Print_linked_list(head);
 }
