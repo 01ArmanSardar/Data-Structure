@@ -46,18 +46,64 @@ int main()
         cin >> str;
         if (str == "end")
             break;
-       insert_at_tail (head, tail, str); // time complexity O(1)
+        insert_at_tail(head, tail, str); // time complexity O(1)
     }
-    print_normal(head);
-   /* int Q;
-   cin >> Q;
-   while (Q--)
-   {
-    string visit,next,prev,browser ;
-    cin >>visit>>next>>prev;
-    if (visit == browser)
+    int Q;
+    cin >> Q;
+    string browser;
+    string address;
+    Node *tmp = head;
+    Node *cur = head;
+    while (Q--)
     {
-        cin >>browser;
+        cin >> browser;
+        if (browser == "visit")
+        {
+            cin >> address;
+            while (tmp->next != NULL)
+            {
+                if (tmp->str == address)
+                {
+                    // cur->str = address;
+                    cout << address << endl;
+                    cur->str = address;
+                    break;
+                }
+                 cur = cur->next;
+                tmp = tmp->next; 
+            }
+            /* cur = cur->next;
+            tmp = tmp->next; */
+            if (tmp->next == NULL && tmp->str == browser)
+            {
+                cout << address << endl;
+            }
+            if (tmp->next == NULL && tmp->str != address)
+            {
+                cout << "Not Available" << endl;
+            }
+        }
+        else if (browser == "prev")
+        {
+
+            if (cur->prev != NULL)
+            {
+                cur = cur->prev;
+                cout << cur->str << endl;
+                continue;
+            }
+            cout << "Not Available" << endl;
+        }
+        else if (browser == "next")
+        {
+
+            if (cur->next != NULL)
+            {
+                cur = cur->next;
+                cout << cur->str << endl;
+                continue;
+            }
+            cout << "Not avilable" << endl;
+        }
     }
-   } */
 }
