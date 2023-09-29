@@ -1,109 +1,82 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-class Node
-{
-public:
-    string str;
-    Node *next;
-    Node *prev;
-    Node(string str)
-    {
-        this->str = str;
-        this->next = NULL;
-        this->prev = NULL;
-    }
+class Node{
+    public:
+        string str;
+        Node *next;
+        Node *prev;
+        Node(string str){
+            this->str=str;
+            this->next=NULL;
+            this->prev=NULL;
+        }
 };
-void insert_at_tail(Node *&head, Node *&tail, string str)
-{
-    Node *newnode = new Node(str);
-    if (head == NULL)
-    {
-        head = newnode;
-        tail = newnode;
+void insert_at_tail(Node *&head,Node *&tail,string str){
+    Node *newNode=new Node(str);
+    if(tail==NULL){
+        head=newNode;
+        tail=newNode;
         return;
     }
-    tail->next = newnode;
-    newnode->prev = tail;
-    tail = newnode;
-}
-void print_normal(Node *head)
-{
-    Node *tmp = head;
-    while (tmp != NULL)
-    {
-        cout << tmp->str << " ";
-        tmp = tmp->next;
-    }
-    cout << endl;
+    tail->next=newNode;
+    newNode->prev=tail;
+    tail=newNode;
 }
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
+    Node *head=NULL;
+    Node *tail=NULL;
     string str;
-    while (true) // time complexity O(n)
-    {
-        cin >> str;
-        if (str == "end")
-            break;
-        insert_at_tail(head, tail, str); // time complexity O(1)
+    while(true){
+       cin>>str;
+       if(str=="end") break;
+       insert_at_tail(head,tail,str);
     }
-    int Q;
-    cin >> Q;
-    string browser;
+    int q;
     string address;
-    Node *tmp = head;
-    Node *cur = head;
-    while (Q--)
-    {
-        cin >> browser;
-        if (browser == "visit")
-        {
-            cin >> address;
-            while (tmp->next != NULL)
-            {
-                if (tmp->str == address)
-                {
-                    // cur->str = address;
-                    cout << address << endl;
-                    cur->str = address;
+    string browser;
+    cin>>q;
+    cin.ignore();
+    Node *temp=head;
+    Node *cur=head;
+    while(q--){
+        cin>>address;
+        if(address=="visit"){
+            cin>>browser;
+            bool flag=false;
+            temp=head;
+            while(temp!=NULL){
+                if(temp->str==browser){
+                    cout<<browser<<endl;
+                    cur=temp;
+                    flag=true;
                     break;
                 }
-                 cur = cur->next;
-                tmp = tmp->next; 
+                temp=temp->next;
             }
-            /* cur = cur->next;
-            tmp = tmp->next; */
-            if (tmp->next == NULL && tmp->str == browser)
-            {
-                cout << address << endl;
-            }
-            if (tmp->next == NULL && tmp->str != address)
-            {
-                cout << "Not Available" << endl;
+             if(flag==false){
+                cout<<"Not Available"<<endl;
             }
         }
-        else if (browser == "prev")
-        {
+        else if(address=="prev"){
+            if(cur->prev==NULL){
+                cout<<"Not Available"<<endl;
+            }
+            else{
+              cur=cur->prev;
+              cout<<cur->str<<endl;
+            }
 
-            if (cur->prev != NULL)
-            {
-                cur = cur->prev;
-                cout << cur->str << endl;
-                continue;
-            }
-            cout << "Not Available" << endl;
         }
-        else if (browser == "next")
-        {
-
-            if (cur->next != NULL)
-            {
-                cur = cur->next;
-                cout << cur->str << endl;
-                continue;
+        else if(address=="next"){
+            if(cur->next==NULL){
+                cout<<"Not Available"<<endl;
             }
-            cout << "Not avilable" << endl;
-        }
+            else{
+              cur=cur->next;
+                cout<<cur->str<<endl;
+            }
+       }
     }
+    return 0;
 }
