@@ -3,29 +3,29 @@ using namespace std;
 class MyStack
 {
 public:
-    vector<int> v;
+    list<int> l;
     void push(int val)
     {
-        v.push_back(val);
+        l.push_back(val);
     }
     void pop()
     {
-        v.pop_back();
+        l.pop_back();
     }
     int top()
     {
-        return v.back();
+        return l.back();
     }
     int size()
     {
-        return v.size();
+        return l.size();
     }
     bool empty()
     {
-        if (v.size() == 0)
+        if (l.size() == 0)
             return true;
         else
-            return false;
+            false;
     }
 };
 int main()
@@ -39,9 +39,9 @@ int main()
         cin >> x;
         st.push(x);
     }
-    while (st.empty() == false)
+    while (!st.empty())
     {
-       cout << st.top()<<endl;
-       st.pop();  
+        cout << st.top() << endl;
+        st.pop();
     }
 }
