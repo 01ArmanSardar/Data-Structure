@@ -16,7 +16,7 @@ class MyQueue
 public:
     Node *head = NULL;
     Node *tail = NULL;
-    int sz;
+    int sz=0;
     void push(int val)
     {
         sz++;
@@ -65,12 +65,12 @@ int main()
     for (int i=0;i<n;i++)
     {
         int x;
-        cin  >>x;
+        cin >>x;
         qu.push(x);
     }
     while (qu.empty()==false)
     {
-        qu.pop();
         cout <<qu.front()<<endl;
+        qu.pop();
     }
 }
