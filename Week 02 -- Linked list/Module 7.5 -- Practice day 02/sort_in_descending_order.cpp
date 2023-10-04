@@ -32,6 +32,17 @@ void insert_tail(Node *&head, Node *&tail, int v) // time complexity O(1)
     tail->next = newnode;
     tail = newnode;
 }
+void reverse(Node  * & head,Node *cur )
+{
+    if (cur->next == NULL)
+    {
+        head =cur;
+        return;
+    }
+    reverse (head,cur->next);
+    cur->next->next=cur;
+    cur ->next=NULL;
+}
 int main()
 {
     Node *head = NULL;
