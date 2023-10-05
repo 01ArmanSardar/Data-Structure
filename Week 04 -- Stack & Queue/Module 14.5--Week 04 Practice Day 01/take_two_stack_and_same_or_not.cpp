@@ -48,23 +48,28 @@ int main()
         cin >> y;
         st2.push(y);
     }
-    int flag = 1;
+    // int flag = 1;
     if (st1.size() == st2.size())
     {
-        cout << "Yes";
+
+        int flag = 1;
         while (!st1.empty())
         {
-            if (st1.top() == st2.top())
+            if (st1.top() != st2.top())
             {
-                st1.pop();
-                st2.pop();
+                flag = 0;
             }
-            else
-                flag == 0;
+          st1.pop();
+          st2.pop();
+                
         }
         if (flag == 0)
             cout << "no";
+        else
+            cout << "yes";
     }
+    // else if (flag == 0)
+    // cout << "no";
     else
     {
         cout << "NO";
