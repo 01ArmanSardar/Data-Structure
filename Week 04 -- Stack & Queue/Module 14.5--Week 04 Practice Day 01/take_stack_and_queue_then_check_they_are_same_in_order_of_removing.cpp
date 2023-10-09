@@ -31,7 +31,7 @@ int main()
             {
                 flag = 0;
                 break;
-                cout << "jj";
+                
             }
             else
             {
