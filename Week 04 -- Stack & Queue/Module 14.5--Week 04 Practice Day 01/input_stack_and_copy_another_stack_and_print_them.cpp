@@ -11,21 +11,21 @@ int main()
         cin >> x;
         st.push(x);
     }
-  /*   while (!st.empty())
+   while (!st.empty())
     {
         st2.push(st.top());
-
+        st.pop();
     }
     while (!st2.empty())
     {
-        cout << st2.top() << endl;
+        cout << st2.top() << " ";
         st2.pop();
-    } */
-    while (!st.empty())
+    } 
+   /*  while (!st.empty())
     {
-        cout <<st.top()<<endl;
+        cout <<st.top()<<" ";
         st.pop();
-    }
+    } */
 
     return 0;
 }
