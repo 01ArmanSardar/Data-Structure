@@ -22,7 +22,7 @@ int main()
         q.push(y);
     }
 
-    if (st.size() == q.size())
+     if (st.size() == q.size())
     {
         int flag = 1;
         while (!st.empty())
@@ -48,5 +48,5 @@ int main()
     {
         cout << "NO";
     }
-    return 0;
+    return 0; 
 }
