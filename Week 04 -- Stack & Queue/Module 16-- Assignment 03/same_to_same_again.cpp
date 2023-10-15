@@ -91,7 +91,7 @@ public:
 int main()
 {
     int n, m;
-    stack<int> st;
+    MyStack st;
     cin >> n;
     for (int i = 0; i < n; i++)
     {
@@ -100,7 +100,7 @@ int main()
         st.push(x);
     }
 
-    queue<int> q;
+   MyQueue q;
 
     cin >> m;
     for (int i = 0; i < m; i++)
@@ -119,7 +119,6 @@ int main()
             {
                 flag = 0;
                 break;
-                
             }
             else
             {
