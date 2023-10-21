@@ -15,6 +15,11 @@ public:
 };
 void levelOrder(Node *root)
 {
+     if (root ==NULL) 
+    {
+        cout <<"tree nai";
+        return;
+    }
     queue<Node *> q;
     q.push(root);
     while (!q.empty())

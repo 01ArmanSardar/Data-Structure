@@ -56,9 +56,9 @@ Node *input_tree()
 }
 void levelOrder(Node *root)
 {
-    if (root ==NULL) 
+    if (root == NULL)
     {
-        cout <<"tree nai";
+        cout << "tree nai";
         return;
     }
     queue<Node *> q;
@@ -77,9 +77,18 @@ void levelOrder(Node *root)
             q.push(f->right);
     }
 }
+int countNode(Node *root)
+{
+    if (root == NULL)
+        return 0;
+    int l = countNode(root->left);
+    int r=countNode(root->right);
+    return l+r+1;
+}
 int main()
 {
     Node *nroot = input_tree();
-    levelOrder(nroot);
+    // levelOrder(nroot);
+   cout << countNode(nroot)<<endl;
     return 0;
 }
