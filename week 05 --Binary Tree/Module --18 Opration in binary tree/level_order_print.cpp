@@ -13,24 +13,22 @@ public:
         this->right = NULL;
     }
 };
-void levelOrder (Node *root)
+void levelOrder(Node *root)
 {
     queue<Node *> q;
     q.push(root);
     while (!q.empty())
     {
-        //1 . ber kore anah
-       Node *f=q.front();
-       q.pop(); 
-       //2 .jabotiyo ja kaj ache
-       cout <<f->val<<" ";
-       //3 . children gulh keh rakah
-if (f->left) q.push(f->left);
-if (f->right) q.push(f->right);
-
-
-
-
+        // 1 . ber kore anah
+        Node *f = q.front();
+        q.pop();
+        // 2 .jabotiyo ja kaj ache
+        cout << f->val << " ";
+        // 3 . children gulh keh rakah
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
     }
 }
 int main()
@@ -49,12 +47,12 @@ int main()
     root->left = a;
     root->right = b;
     a->left = c;
-    a->right=h;
-    c->right=e;
-    b->right=d;
-    d->left=f;
-    d->right=g;
-    h->right=i;
+    a->right = h;
+    c->right = e;
+    b->right = d;
+    d->left = f;
+    d->right = g;
+    h->right = i;
     levelOrder(root);
     return 0;
 }
