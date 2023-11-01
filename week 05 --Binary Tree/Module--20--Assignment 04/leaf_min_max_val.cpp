@@ -83,15 +83,19 @@ int leaf_min_max(Node *root)
     {
         return 0;
     }
-     leaf_min_max(root->left);
+    int l = root->left->val;
+    int r = root->right->val;
+
+    leaf_min_max(root->left);
     leaf_min_max(root->right);
     if (root->left == NULL && root->right == NULL)
     {
-        return (max(root->left->val, root->right->val));
-        return (min(root->left->val, root->right->val));
+        return max(l, r);
+        return min(l, r);
     }
-    //leaf_min_max(root->left);
-    //leaf_min_max(root->right);
+
+    // leaf_min_max(root->left);
+    // leaf_min_max(root->right);
 }
 int main()
 {
