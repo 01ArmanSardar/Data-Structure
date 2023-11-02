@@ -77,28 +77,29 @@ void levelOrder(Node *root)
             q.push(f->right);
     }
 }
-int leaf_min_max(Node *root)
+int mn =INT_MAX;
+int mx=INT_MIN;
+void leaf_min_max(Node *root)
 {
     if (root == NULL)
     {
-        return 0;
+        return ;
     }
-    int l = root->left->val;
-    int r = root->right->val;
-
-    leaf_min_max(root->left);
-    leaf_min_max(root->right);
+   
+   
     if (root->left == NULL && root->right == NULL)
     {
-        return max(l, r);
-        return min(l, r);
+       mx = max(mx, root->val);
+        mn = min(mn, root->val);
     }
 
-    // leaf_min_max(root->left);
-    // leaf_min_max(root->right);
+     leaf_min_max(root->left);
+     leaf_min_max(root->right);
 }
 int main()
 {
     Node *root = input_tree();
-    cout << leaf_min_max(root);
+     leaf_min_max(root);
+     cout <<mx<<" ";
+     cout<<mn;
 }
