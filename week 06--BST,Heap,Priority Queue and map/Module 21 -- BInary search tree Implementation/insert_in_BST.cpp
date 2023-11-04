@@ -109,10 +109,9 @@ void insert_bst(Node *&root, int x)
 int main()
 {
     Node *root = input_tree();
-   // int x;
-   // cin >> x;
-    
-    insert_bst(root,13);
-    insert_bst(root,32900);
+    int x;
+    cin >> x;
+
+    insert_bst(root, 13);
     levelOrder(root);
 }
