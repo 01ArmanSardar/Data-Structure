@@ -2,7 +2,8 @@
 using namespace std;
 int main()
 {
-    priority_queue<int> pq;
+ // priority_queue<int> pq;//this priority queue is use for max heap
+    priority_queue<int,vector<int>,greater<int>> pq; //(this priority queue is use for min heap)
     while (true)
     {
         int c;
@@ -11,15 +12,15 @@ int main()
         {
             int x;
             cin >> x;
-            pq.push(x); // O(logN);
+            pq.push(x); // O(logN) time complexity;
         }
         else if (c == 1)
         {
-            pq.pop(); // O(logN);
+            pq.pop(); // O(logN) time complexity;
         }
         else if (c == 2)
         {
-            cout << pq.top() << endl; // O(1);
+            cout << pq.top() << endl; // O(1) time complexity;
         }
         else
             break;
