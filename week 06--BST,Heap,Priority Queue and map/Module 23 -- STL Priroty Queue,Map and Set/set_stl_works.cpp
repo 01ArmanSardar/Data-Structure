@@ -12,9 +12,11 @@ int main()
         cin >> x;
         s.insert(x);//O(logN)
     }
-    for (auto it =s.begin();it!=s.end();it++)
+    if (s.count (9)) cout <<"yes";
+    else cout <<"NO";
+   /* for (auto it =s.begin();it!=s.end();it++)
     {
         cout <<*it<<endl;
-    }
+    }*/
     return 0;
 }
