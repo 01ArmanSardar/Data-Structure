@@ -12,11 +12,11 @@ int main()
         cin >> x;
         s.insert(x);//O(logN)
     }
-    if (s.count (9)) cout <<"yes";
-    else cout <<"NO";
+   /*if (s.count (9)) cout <<"yes";//searchig : bst teh count koreh dekah jeh kono aktah value ache kina takle yes na takle no
+    else cout <<"NO";*/
    /* for (auto it =s.begin();it!=s.end();it++)
     {
-        cout <<*it<<endl;
+        cout <<*it<<endl;  (a scope die amrah alomeloh vlue gulah ke choto tekeh boro print korbho ar jodhi dupliacte takhe tahole tao bhad die sudho aktah count korbho ,karon BST dupliacte support kore nah )
     }*/
     return 0;
 }
