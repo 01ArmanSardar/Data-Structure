@@ -1,2 +1,9 @@
-1
-Ratul loves to play football when he gets time but Ratul is not a good player so his teacher asked Ratul if he can play with him so that Ratul can progress
+4
+5
+20 10 40 50 30
+10
+10 20 40 20 10 30 50 10 20 40
+5
+20 20 20 20 20
+4
+10 30 10 30

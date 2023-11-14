@@ -9,25 +9,23 @@ int main()
     while (t--)
     {
         string sentence;
-        getline(cin,sentence);
+        getline(cin, sentence);
         string word;
         stringstream ss(sentence);
         map<string, int> mp;
-         string ans;
-            int max=INT_MIN;
+        string ans;
+        int max = INT_MIN;
         while (ss >> word)
         {
-             
+
             mp[word]++;
-          if (mp[word]>max)
+            if (mp[word] > max)
             {
-                max=mp[word];
-              ans =word;
+                max = mp[word];
+                ans = word;
             }
         }
-        cout <<ans<<" "<<max<<endl;
-
-        
+        cout << ans << " " << max << endl;
     }
 
     return 0;
