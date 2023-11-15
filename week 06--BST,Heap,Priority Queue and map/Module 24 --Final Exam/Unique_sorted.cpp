@@ -6,30 +6,35 @@ int main()
     // Write your code here
     int t;
     cin >> t;
-    vector<int> v;
-    vector<int> tmp;
+   // set <int> s;
     while (t--)
     {
+        set <int> s;
         int n;
         cin >> n;
-        int j;
         for (int i = 0; i < n; i++)
         {
+             
             int x;
             cin >> x;
-            v.push_back(x);
-            sort(v.begin(), v.end(), greater<int>());
-            if (v[i] != v[i + 1])
-            {
-                tmp[j] = v[i];
-            }
-            for (j=0;j<n;j++)
-            {
-                cout <<tmp[j]<<" " <<endl;
-            }
+            s.insert(x);
+           
         }
+        vector <int> v{s.begin(),s.end()};
+        reverse(v.begin(),v.end());
+       for (int val :v)
+        {
+          cout << val<<" ";  
+        }
+        cout <<endl;
+        
         
     }
+    
+    /*for (auto it =s.begin();it!=s.end();it++)
+        {
+            cout <<*it<<" "<<endl;
+        }*/
 
     return 0;
 }
