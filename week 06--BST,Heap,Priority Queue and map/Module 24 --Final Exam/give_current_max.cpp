@@ -20,14 +20,15 @@ public:
     {
         if (a.marks < b.marks)
             return true;
-            else if (a.marks>b.marks)
+        else if (a.marks > b.marks)
             return false;
-            else 
-            {
-                if (a.rool>b.rool)
+        else
+        {
+            if (a.rool > b.rool)
                 return true;
-                else return false;
-            }
+            else
+                return false;
+        }
     }
 };
 int main()
@@ -43,11 +44,18 @@ int main()
         student obj(name, marks, rool);
         pq.push(obj);
     }
-    while (!pq.empty())
+    int q;
+    cin >> q;
+    while (q--)
     {
-        cout << pq.top().name << " " << pq.top().marks << " " << pq.top().rool << endl;
+        int a;
+        cin >>a;
+        if (a==1)
+        {
+            cout <<pq.top().name<< " "<<pq.top().marks<<" "<<pq.top().rool<<endl;
+        }
+        else 
         pq.pop();
     }
-
     return 0;
 }
