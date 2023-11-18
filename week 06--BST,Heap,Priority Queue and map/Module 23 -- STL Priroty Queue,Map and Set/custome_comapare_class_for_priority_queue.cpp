@@ -18,10 +18,16 @@ class cmp
 public:
     bool operator()(student a, student b)
     {
-        if (a.marks < b.marks)
+        if (a.marks > b.marks)
             return true;
-        else
+            else if (a.marks<b.marks)
             return false;
+            else 
+            {
+                if (a.rool>b.rool)
+                return true;
+                else return false;
+            }
     }
 };
 int main()
