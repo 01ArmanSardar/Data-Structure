@@ -7,23 +7,25 @@ int main()
     cin >> t;
     while (t--)
     {
-       int key;
+
         map<int, int> mp;
         int ans;
-            int max=INT_MIN;
+        int max = INT_MIN;
         while (!mp.empty())
         {
-             
-            mp[key]++;
-          if (mp[key]>max)
+            int x;
+            mp[x]++;
+            if (mp[x] > max)
             {
-                max=mp[key];
-              ans =key;
+                max = mp[x];
+                ans = x;
+            }
+            if (x == mp[x])
+            {
+                ans = max(ans, x);
             }
         }
-        cout <<ans<<" "<<max<<endl;
-
-        
+        cout << ans << " " << max << endl;
     }
 
     return 0;
